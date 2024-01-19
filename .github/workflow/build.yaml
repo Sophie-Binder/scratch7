@@ -19,7 +19,9 @@ jobs:
           cache: 'maven'
           cache-dependency-path: 'code-with-quarkus/pom.xml' # optional
 
-      - run: java-version
+      - name: comple
+          run: java-version
+          
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}/code-with-quarkus
