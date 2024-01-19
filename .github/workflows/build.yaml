@@ -9,8 +9,7 @@ jobs:
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
-
-        uses: actions/checkout@v4
+          uses: actions/checkout@v4
 
       - uses: actions/setup-java@v4
         with:
@@ -21,8 +20,9 @@ jobs:
 
       - name: comple
           run: java-version
+          working-directory: code.with-quarkus
           
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}/code-with-quarkus
+          ls ${{ github.workspace }}/code-with-quarkus/target
       - run: echo "🍏 This job's status is ${{ job.status }}."
